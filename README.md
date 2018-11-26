@@ -83,3 +83,7 @@ JUnit을 디펜던시 테스트 스코프에 넣음
 이 플러그인의 기본 설정은 모든 `src/test/java`에 있는 `*Test` 클래스를 컴파일하고 실행함
 
 `mvn test`
+
+## Securing with Web
+
+Spring Boot Maven Plugin은 많은 이점이 있음
