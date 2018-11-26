@@ -170,3 +170,22 @@ main() 메서드로 만들면 스프링의 내장 톰캣 서버에서 실행 가
 `./mvnw spring-boot:run`으로 실행하거나 jar 파일을 `./mvnw clean package`로 만들 수 있음
 
 애플리케이션이 실행되면 `localhost:8080`에 가면 됨
+
+### 스프링 시큐리티 설정
+
+hello를 인가된 유저만 볼 수 있게 장벽을 추가함
+클래스패스에 스프링 시큐리티가 있으면 스프링 부트는 기본 인증을 통해 [자동적으로 모든 HTTP 엔드포인트를 보호함](https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#boot-features-security)
+나중에 보안 설정을 커스터마이즈할 수 있음
+
+클래스패스에 스프링 시큐리티를 추가하려면 `pom.xml`에 의존성을 추가함
+
+```xml
+<dependencies>
+    ...
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+    ...
+</dependencies>
+```
