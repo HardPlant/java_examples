@@ -193,4 +193,12 @@ hello를 인가된 유저만 볼 수 있게 장벽을 추가함
 
 `src/main/java/hello/WebSecurityConfig.java`
 
-`WebSecurityConfig`
+`WebSecurityConfig` 클래스는 `@EnableWebSecurity` 어노테이션으로 스프링 시큐리티 웹 서포트를 활성화하고 스프링 MVC와 통합한다. `WebSecurityConfigurerAdapter`를 확장하고 그 메서드 몇 개를 오버라이드해서 웹 시큐리티 설정을 수행한다.
+
+`configure(HttpSecurity)` 메서드는 보호할 URL 메서드와 그렇지 않은 메서드를 지정한다. 
+
+사용자가 성공적으로 로그인하면 인증을 요청한 페이지로 리다이렉트될 것인데, `loginPage()`에서 지정한 커스텀 페이지로 이동할 것이고, 모든 사람이 그것을 볼 수 있게 한다.
+
+`userDetailsService()` 메서드로, 단일 사용자와 메모리 상주 사용자 스토어를 지정한다. 사용자는 `USER` 역할을 하는 user, password를 갖는다.
+
+
