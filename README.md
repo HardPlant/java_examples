@@ -45,4 +45,21 @@ mvn install
 
 애플리케이션에 전체 날짜, 시간을 넣도록 할 것임
 
+```xml
+<dependencies>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+</dependencies>
+```
 
+넣을 라이브러리를 `pom.xml`에 넣으면 됨
+
+여기도 마찬가지로 `groupId`, `artifactId`, `version`을 넣으면 됨
+
+모든 의존성은 `compile` 타임에 확보되며, WAR 파일을 만든다면 `/WEB-INF/libs/` 폴더에 있음
+`scope`를 지정할 수 있는데, `provided`(컴파일에 필요할 시, 그리고 코드를 실행하는 런타임에 제공될 시, Servlet), `test` (테스트 시)
+
+`mvn compile`, `mvn package` 시에 Maven Central Repository에서 의존성을 가져와서 빌드함
