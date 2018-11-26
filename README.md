@@ -94,6 +94,39 @@ Spring Boot Maven Plugin은 많은 이점이 있음
 
 * 빌트인 의존성 해결자를 가지고 있음
 
+#### 의존성 분석
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-test</artifactId>
+	<scope>test</scope>
+</dependency>
+```
+
+```xml
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-test</artifactId>
+	<scope>test</scope>
+</dependency>
+```
+
+
 #### 비안전한 웹 애플리케이션 만들기
 
 안전하게 할 웹 애플리케이션이 필요함
