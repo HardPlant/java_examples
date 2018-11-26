@@ -190,3 +190,7 @@ hello를 인가된 유저만 볼 수 있게 장벽을 추가함
 </dependencies>
 ```
 그리고 보안 설정을 추가해 인증된 유저만 그리팅을 볼 수 있게 함
+
+`src/main/java/hello/WebSecurityConfig.java`
+
+`WebSecurityConfig`
