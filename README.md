@@ -76,3 +76,6 @@ JUnit을 디펜던시 테스트 스코프에 넣음
 	<scope>test</scope>
 </dependency>
 ```
+
+`src/test/java/hello/GreeterTest.java`
+
