@@ -79,3 +79,7 @@ JUnit을 디펜던시 테스트 스코프에 넣음
 
 `src/test/java/hello/GreeterTest.java`
 
+메이븐은 surefire 플러그인으로 테스트를 진행함
+이 플러그인의 기본 설정은 모든 `src/test/java`에 있는 `*Test` 클래스를 컴파일하고 실행함
+
+`mvn test`
