@@ -157,3 +157,16 @@ addViewControllers() 메서드는 (WebMvcConfigurer에서 오버라이드됨) �
 이 서비스를 WAR로 만들어 외부 WAS에 올릴 수 있지만, 스탠드얼론 애플리케이션으로 만들 수 있음
 main() 메서드로 만들면 스프링의 내장 톰캣 서버에서 실행 가능함
 
+`@SpringBootApplication` 어노테이션은 다음을 추가함
+
+* `@Configuration` 태그를 추가해 애플리케이션 컨텍스트의 빈 정의를 추가함
+* `@EnableAutoConfiguration`으로 스프링 부트가 클래스패스 세팅 기반으로 빈을 추가함
+* `@EnableWebMvc`를 보통 스프링 MVC 앱에 추가하지만, 스프링 부트는 spring-webmvc가 클래스패스에 보이면 자동적으로 추가해 `DispatcherServler` 설정같은 것을 활성화함
+
+* `@ComponentScan`은 `hello` 패키지의 다른 컴포넌트, 설정, 서비스를 스프링이 찾게 함
+
+`web.xml` 파일이 없음
+
+`./mvnw spring-boot:run`으로 실행하거나 jar 파일을 `./mvnw clean package`로 만들 수 있음
+
+애플리케이션이 실행되면 `localhost:8080`에 가면 됨
