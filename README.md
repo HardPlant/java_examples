@@ -205,3 +205,15 @@ hello를 인가된 유저만 볼 수 있게 장벽을 추가함
 
 로그인 페이지의 Thymeleaf 템플릿은 유저네임, 페스워드를 login으로 포스트하는 폼을 가지고 있다. 스프링 시큐리티는 저 요청을 인터셉트해 사용자를 인증하는 필터를 제공한다. 사용자가 인증 실패하면 페이지는 `/login?error` 페이지로 리다이렉트되며, 적절한 에러 메시지를 표시한다. 로그아웃하면 `/login?logout` 요청을 받아 적절한 성공 메시지를 표시한다.
 
+사용자가 현재 이름과 로그아웃 버튼을 볼 수 있도록 `hello.html`을 업데이트하자.
+
+```html
+    <body>
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+	</body>
+```
+
+사용자 이름은 스프링 시큐리티의 `HttpServletRequest#getRemoteUser()`를 사용해 표시한다.
