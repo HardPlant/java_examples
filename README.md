@@ -96,12 +96,16 @@ Spring Boot Maven Plugin은 많은 이점이 있음
 
 #### 의존성 분석
 
+스프링 부트 스타터 : themleaf 템플릿 엔진
+
 ```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 ```
+
+스프링 부트 스타터 : 웹
 
 ```xml
 <dependency>
@@ -110,6 +114,8 @@ Spring Boot Maven Plugin은 많은 이점이 있음
 </dependency>
 ```
 
+스프링 부트 스타터 : 테스트
+
 ```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -117,6 +123,8 @@ Spring Boot Maven Plugin은 많은 이점이 있음
 	<scope>test</scope>
 </dependency>
 ```
+
+스프링 시큐리티 테스트
 
 ```xml
 <dependency>
