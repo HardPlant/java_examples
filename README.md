@@ -63,3 +63,16 @@ mvn install
 `scope`를 지정할 수 있는데, `provided`(컴파일에 필요할 시, 그리고 코드를 실행하는 런타임에 제공될 시, Servlet), `test` (테스트 시)
 
 `mvn compile`, `mvn package` 시에 Maven Central Repository에서 의존성을 가져와서 빌드함
+
+### 테스트 작성
+
+JUnit을 디펜던시 테스트 스코프에 넣음
+
+```xml
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.12</version>
+	<scope>test</scope>
+</dependency>
+```
