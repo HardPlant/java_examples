@@ -1,9 +1,14 @@
 package com.seongwon.cipher;
 
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 import java.security.SecureRandom;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -21,5 +26,17 @@ public class App
 
         byte[] iv = new byte[12];
         secureRandom.nextBytes(iv);
+
+        final Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);
+
+        String text = "Hello AES!";
+        Charset charset = Charset.forName("utf-8");
+        CharsetEncoder encoder = charset.newEncoder();
+        ByteBuffer buffer = encoder.encode(CharBuffer.wrap(text));
+        byte[] plaintext = new byte[buffer.remaining()];
+        byte[] cipherText = cipher.doFinal(plaintext);
+
     }
 }
