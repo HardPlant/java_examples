@@ -1,13 +1,17 @@
 package com.seongwon.cipher;
 
+import javax.crypto.Cipher;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws Throwable
     {
-        System.out.println( "Hello World!" );
+        Cipher cipher = Cipher.getInstance("AES");
+        
+
     }
 }
