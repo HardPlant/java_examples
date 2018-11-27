@@ -1,5 +1,5 @@
-groupId=com.designpattern.mvc
-artifactId=my-mvc
+groupId=com.seongwon.cipher
+artifactId=simple-cipher
 archetypeArtifactId="maven-archetype-quickstart"
 interactiveMode="false"
 module=App
