@@ -1,5 +1,5 @@
-groupId=com.seongwon.cipher
-artifactId=simple-cipher
+groupId=com.seongwon.jni
+artifactId=java-jni
 archetypeArtifactId="maven-archetype-quickstart"
 interactiveMode="false"
 module=App
