@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
+import java.util.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -25,10 +26,6 @@ public class App
 {
     public static void main( String[] args ) throws Throwable
     {
-        KeyPair keyPair = buildKeyPair();
-        PublicKey pubkey = keyPair.getPublic();
-        PrivateKey privateKey = keyPair.getPrivate();
-    
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         SecureRandom secureRandom = new SecureRandom();
         int keyBitSize = 128;
@@ -51,38 +48,53 @@ public class App
         System.out.println();
 
 
+        KeyPair keyPair = buildKeyPair();
+        PublicKey pubkey = keyPair.getPublic();
+        PrivateKey privateKey = keyPair.getPrivate();
+    
         cipher.init(Cipher.DECRYPT_MODE, secretKey, parameterSpec);
 
         byte[] decipher = cipher.doFinal(cipherText);
         System.out.println(new String(decipher, "UTF-8").trim());
 
-        byte[] rsakey = getRSAEncryptedKey(privateKey, secretKey.getEncoded());
-        System.out.println(rsakey.toString());
+        byte[] key = secretKey.getEncoded();
+        
+        String strKey = Base64.getEncoder().encodeToString(key);
+        
+        System.out.println(strKey.toString());
+        
+        String rsakey = getRSAEncryptedKey(pubkey, strKey);
+        
+        System.out.println("RSA KEY: "+rsakey);
 
-        byte[] deckey = getRSADecryptedKey(pubkey, rsakey);
-        System.out.println(deckey.toString());
-        System.out.println(secretKey.getEncoded().length);
-        System.out.println(secretKey.getEncoded().toString());
+        String deckey = getRSADecryptedKey(privateKey, rsakey);
+        
+        System.out.println("DEC KEY: "+deckey.toString());
 
+        System.out.println(strKey.toString());
     }
     
+    
+    public static String getRSAEncryptedKey(PublicKey pubkey ,String key) throws Throwable{
+        Cipher rsacipher = Cipher.getInstance("RSA");
+        rsacipher.init(Cipher.ENCRYPT_MODE, pubkey);
 
-    public static byte[] getRSAEncryptedKey(PrivateKey privateKey ,byte[] key) throws Throwable{
-        Cipher cipher = Cipher.getInstance("RSA");
-        cipher.init(Cipher.ENCRYPT_MODE, privateKey);
+        byte[] cipher = rsacipher.doFinal(key.getBytes("UTF-8"));
 
-        return cipher.doFinal(key);
+        return Base64.getEncoder().encodeToString(cipher);
+    }
+    
+    public static String getRSADecryptedKey(PrivateKey privkey ,String key) throws Throwable{
+        byte[] bytes = Base64.getDecoder().decode(key);
+        
+        Cipher rsacipher = Cipher.getInstance("RSA");
+        
+        rsacipher.init(Cipher.DECRYPT_MODE, privkey);
+        return new String(rsacipher.doFinal(bytes), "UTF-8");
     }
 
-    public static byte[] getRSADecryptedKey(PublicKey pubKey ,byte[] key) throws Throwable{
-        Cipher cipher = Cipher.getInstance("RSA");
-        cipher.init(Cipher.DECRYPT_MODE, pubKey);
-
-        return cipher.doFinal(key);
-    }
-
-    public static KeyPair buildKeyPair() throws NoSuchAlgorithmException{
-        final int keySize = 2048;
+    public static KeyPair buildKeyPair() throws Exception{
+        final int keySize = 1024;
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(keySize);
         return keyPairGenerator.generateKeyPair();
