@@ -18,5 +18,8 @@ public class App
         byte[] key = new byte[16];
         secureRandom.nextBytes(key);
         SecretKey secretKey = SecretKeySpec(key, "AES");
+
+        byte[] iv = new byte[12];
+        secureRandom.nextBytes(iv);
     }
 }
