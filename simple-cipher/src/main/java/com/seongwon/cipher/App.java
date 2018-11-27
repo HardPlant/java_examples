@@ -22,7 +22,7 @@ public class App
         SecureRandom secureRandom = new SecureRandom();
         byte[] key = new byte[16];
         secureRandom.nextBytes(key);
-        SecretKey secretKey = SecretKeySpec(key, "AES");
+        SecretKey secretKey = SecretKeySpec();
 
         byte[] iv = new byte[12];
         secureRandom.nextBytes(iv);
@@ -31,19 +31,9 @@ public class App
         GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
         cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);
 
-        String text = "Hello AES!";
-        Charset charset = Charset.forName("utf-8");
-        CharsetEncoder encoder = charset.newEncoder();
-        ByteBuffer buffer = encoder.encode(CharBuffer.wrap(text));
-        byte[] plaintext = new byte[buffer.remaining()];
-        byte[] cipherText = cipher.doFinal(plaintext);
+        byte[] plainText = "abcabcaabc".getBytes("UTF-8");
+        byte[] cipherText = cipher.doFinal(plainText);
 
-        ByteBuffer byteBuffer = ByteBuffer.allocate(4 
-            + iv.length + cipherText.length);
-        byteBuffer.putInt(iv.length);
-        byteBuffer.put(iv);
-        byteBuffer.put(cipherText);
-        byte[] cipherMessage = byteBuffer.array();
         for(int i=0; i<cipherMessage.length; i++){
             System.out.println(Integer.toHexString(cipherMessage[i]));
         }
