@@ -1,5 +1,7 @@
 use somedb;
 
+DROP TABLE shop;
+
 CREATE TABLE shop (
     article INT(4) UNSIGNED ZEROFILL DEFAULT '0000' NOT NULL,
     dealer  CHAR(20)                 DEFAULT ''     NOT NULL,
