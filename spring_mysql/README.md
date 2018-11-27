@@ -17,3 +17,11 @@
 
 `Application.java`
 
+`@SpringBootApplication`은 다음 것들을 모두 추가한다.
+
+`@Configuration` : 클래스를 앱 문맥을 위한 빈 정의 출처로 취급함
+`@EnableAutoConfiguration` : 클래스패스의 빈들을 추가함
+`@EnableWebMvc`는 스프링 부트가 **spring-webmvc**를 보면 자동으로 추가함
+`@ComponentScan`
+
+`CommandLineRunner` 메서드는 `@Bean`으로 마크되어 있고, 시작 시 실행한다.
