@@ -25,3 +25,13 @@
 `@ComponentScan`
 
 `CommandLineRunner` 메서드는 `@Bean`으로 마크되어 있고, 시작 시 실행한다.
+
+### 유닛 테스트
+
+`MockMvc`는 간편한 빌더 클래스를 통해 `DispatcherServlet`에 HTTP 요청을 보내고 결과에 대해 단언할 수 있게 해 준다.
+`MockMvc` 인스턴스를 삽입하려면 `@SpringBootTest`와 함께 `AutoConfigureMockMvc`를 지정해줘야 한다.
+
+대신 `@WebMvcTest`로 웹 레이어 컨텍스트만 스프링 부트가 생성하게 만들 수 있다.
+
+HTTP Request 사이클을 모킹하는 것처럼 스프링 부트로 풀스택 통합 테스트를 할 수 있다.
+Mock 테스트 대신 실제로 URL을 날리려면..
