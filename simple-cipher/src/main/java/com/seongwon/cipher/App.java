@@ -4,6 +4,11 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.SecureRandom;
 
 import javax.crypto.Cipher;
@@ -20,6 +25,10 @@ public class App
 {
     public static void main( String[] args ) throws Throwable
     {
+        KeyPair keyPair = buildKeyPair();
+        PublicKey pubkey = keyPair.getPublic();
+        PrivateKey privateKey = keyPair.getPrivate();
+    
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         SecureRandom secureRandom = new SecureRandom();
         int keyBitSize = 128;
@@ -44,8 +53,38 @@ public class App
 
         cipher.init(Cipher.DECRYPT_MODE, secretKey, parameterSpec);
 
-        
         byte[] decipher = cipher.doFinal(cipherText);
         System.out.println(new String(decipher, "UTF-8").trim());
+
+        byte[] rsakey = getRSAEncryptedKey(privateKey, secretKey.getEncoded());
+        System.out.println(rsakey.toString());
+
+        byte[] deckey = getRSADecryptedKey(pubkey, rsakey);
+        System.out.println(deckey.toString());
+        System.out.println(secretKey.getEncoded().length);
+        System.out.println(secretKey.getEncoded().toString());
+
+    }
+    
+
+    public static byte[] getRSAEncryptedKey(PrivateKey privateKey ,byte[] key) throws Throwable{
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, privateKey);
+
+        return cipher.doFinal(key);
+    }
+
+    public static byte[] getRSADecryptedKey(PublicKey pubKey ,byte[] key) throws Throwable{
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, pubKey);
+
+        return cipher.doFinal(key);
+    }
+
+    public static KeyPair buildKeyPair() throws NoSuchAlgorithmException{
+        final int keySize = 2048;
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(keySize);
+        return keyPairGenerator.generateKeyPair();
     }
 }
