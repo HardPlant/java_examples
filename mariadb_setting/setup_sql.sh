@@ -11,4 +11,4 @@ if [ $# -eq 0 ]
         exit 1
 fi
 docker exec -ti $app mysql \
--usomedbuser -pUSERPASS_HERE somedb < $SQLNAME
+-u$USERNAME -p$USERPASS $DBNAME < $SQLNAME
