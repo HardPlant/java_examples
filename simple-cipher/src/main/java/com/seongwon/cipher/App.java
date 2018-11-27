@@ -38,5 +38,14 @@ public class App
         byte[] plaintext = new byte[buffer.remaining()];
         byte[] cipherText = cipher.doFinal(plaintext);
 
+        ByteBuffer byteBuffer = ByteBuffer.allocate(4 
+            + iv.length + cipherText.length);
+        byteBuffer.putInt(iv.length);
+        byteBuffer.put(iv);
+        byteBuffer.put(cipherText);
+        byte[] cipherMessage = byteBuffer.array();
+        for(int i=0; i<cipherMessage.length; i++){
+            System.out.println(Integer.toHexString(cipherMessage[i]));
+        }
     }
 }
