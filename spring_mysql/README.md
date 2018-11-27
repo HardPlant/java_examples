@@ -45,3 +45,8 @@ spring.datasource.password=ThePassword
 
 * 좋은 보안 습관은 제품 상태일 때 이걸 `none`로 바꾸고 MySQL 유저에게 모든 권한을 박탈하고 DDL 관련 권한만 주는 것임
 
+### @Entity 모델 만들기
+
+`User.java`
+
+`@Entity` 어노테이션은 하이버네이트에게 이 클래스의 테이블을 만들라고 지시함
