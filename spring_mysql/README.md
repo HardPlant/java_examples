@@ -63,3 +63,19 @@ CrudRepository<Class, PrimaryKey(클래스에서 어노테이션 붙인 값)>을
 
 `@ResponseBody`로 응답을 만들 메서드를 만들고, 메서드의 인자에 `@RequestParam`을 붙이는 것이 가능함
 
+### 실행 가능하게 만들기
+
+```java
+package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
