@@ -55,4 +55,11 @@ spring.datasource.password=ThePassword
 
 CrudRepository<Class, PrimaryKey(클래스에서 어노테이션 붙인 값)>을 만들면 스프링이 빈을 자동으로 구현해 줌
 
-### 
+### 컨트롤러 추가
+
+`@GetMapping`은 `@RequestMapping(method=GET)`의 짧은 표현이고, `@RequestMapping`은 모든 HTTP 연산을 매핑함
+
+`@Autowired`를 `UserRepository`에 붙임으로서 자동 생성된 객체를 사용할 것임
+
+`@ResponseBody`로 응답을 만들 메서드를 만들고, 메서드의 인자에 `@RequestParam`을 붙이는 것이 가능함
+
