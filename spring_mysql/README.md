@@ -50,3 +50,9 @@ spring.datasource.password=ThePassword
 `User.java`
 
 `@Entity` 어노테이션은 하이버네이트에게 이 클래스의 테이블을 만들라고 지시함
+
+### Repository 생성
+
+CrudRepository<Class, PrimaryKey(클래스에서 어노테이션 붙인 값)>을 만들면 스프링이 빈을 자동으로 구현해 줌
+
+### 
