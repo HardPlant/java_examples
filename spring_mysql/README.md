@@ -80,3 +80,14 @@ public class Application {
 }
 ```
 
+### 애플리케이션 테스트하기
+
+`curl`을 사용해서..
+
+`curl 'localhost:8080/demo/add?name=First&email=someemail@someemailprovider.com'`
+
+의 결과로 Saved가 반환되고
+
+`curl 'localhost:8080/demo/all'`
+
+으로 JSON이 반환되는 것을 볼 수 있음
