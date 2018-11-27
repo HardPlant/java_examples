@@ -39,3 +39,21 @@ Mock 테스트 대신 실제로 URL을 날리려면..
 `HelloControllerIT.java`
 
 여기서 웹 서버가 실제로 실행되는데, `@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)`에 의해 임의 포트에서 서버가 실행되고 `@LocalServerPort` 어노테이션이 실행된 서버를 지정한다.
+
+### 제품수준 서비스 추가
+
+서버 상태 체크, 감사 등을 추가하는 `액츄에이터 모듈`을 추가할 수 있다.
+
+```xml
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+```
+을 추가한 뒤 앱을 재시작하면
+
+`errors`, `actuator/health`, `acutator/info`, `actuator`를 엔드포인트에 추가한다.
+
+`/actuator/shutdown` 엔드포인트를 추가할 수 있다. `application.properties` 파일(src/main/resources)에 `management.endpoints.shutdown.enabled=true`를 추가하면 가능하다.
+
+다음으로 [스타터](https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#using-boot-starter)를 볼 수 있다.
