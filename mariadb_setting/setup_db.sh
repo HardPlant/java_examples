@@ -1,5 +1,5 @@
-APP_NAME=${1:mariadbprod}
-PASSWD=${2:FeGam8yaci3UeyaVReey3ud1Upae9miiOaz5aeNaeiG7ray5aaV9EtoWEBe8ibut}
+APP_NAME=${1:-mariadbprod}
+PASSWD=${2:-FeGam8yaci3UeyaVReey3ud1Upae9miiOaz5aeNaeiG7ray5aaV9EtoWEBe8ibut}
 
 docker ps -a | grep $APP_NAME
 docker run -d --name $APP_NAME -h $APP_NAME \

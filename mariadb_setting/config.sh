@@ -1,0 +1,5 @@
+APP_NAME=mariadbprod
+PASSWD=FeGam8yaci3UeyaVReey3ud1Upae9miiOaz5aeNaeiG7ray5aaV9EtoWEBe8ibut
+DBNAME=somedb
+USERNAME=somedbuser
+USERPASS='USERPASS_HERE'
