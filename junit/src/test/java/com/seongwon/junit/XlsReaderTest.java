@@ -1,6 +1,7 @@
 package com.seongwon.junit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -18,5 +19,6 @@ public class XlsReaderTest{
             .file(new File(url.toURI()));
         assertTrue(reader.getFile() != null);
         reader.readSheet(0);
+        assertNotNull(reader.getFile());
     }
 }

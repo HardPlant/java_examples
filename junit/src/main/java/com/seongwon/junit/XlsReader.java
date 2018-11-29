@@ -3,12 +3,14 @@ package com.seongwon.junit;
 import java.io.File;
 import java.io.FileInputStream;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XlsReader {
     File file;
     FileInputStream fis;
     XSSFWorkbook workbook;
+    XSSFSheet sheet;
     public XlsReader(){
 
     }
@@ -24,13 +26,20 @@ public class XlsReader {
         this.workbook = new XSSFWorkbook(this.fis);
         return this;
     }
-    public String readSheet() {
-        return "it reads";
+    public XlsReader readSheet(int sheetNum) {
+        this.workbook.getSheetAt(sheetNum);
+        return this;
     }
     /**
      * @return the file
      */
     public File getFile() {
         return file;
+    }
+    /**
+     * @return the sheet
+     */
+    public XSSFSheet getSheet() {
+        return sheet;
     }
 }
