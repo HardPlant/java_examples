@@ -63,3 +63,12 @@ public class PermiumTweetsServiceTest{
 `@RunWith()` 어노테이션이 테스트 데이터를 테스트 클래스에 주입함
 
 `@Parameters`로 테스트 데이터가 주어짐, 컬렉션을 반환하는 것이 필요함
+
+```java
+    @Parameters
+    public static Collection spreadsheetData() throws IOException {
+        InputStream spreadsheet = new FileInputStream("src/test/resources/data.xls");
+        return new SpreadsheetData(spreadsheet).getData();
+    }
+```
+스프레드시트로 데이터를 얻는 것이 가능할 것임
