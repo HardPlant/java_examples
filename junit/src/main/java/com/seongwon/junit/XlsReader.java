@@ -1,16 +1,20 @@
 package com.seongwon.junit;
 
 import java.io.File;
+import java.io.FileInputStream;
+
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XlsReader {
     File file;
+    FileInputStream fis;
     XSSFWorkbook workbook;
 
-    public XlsReader(File file) {
+    public XlsReader(File file) throws Throwable{
         if (!file.isFile())
             return;
         this.file = file;
+        this.fis = new FileInputStream(this.file);
     }
 
     public XlsReader(String file) {
