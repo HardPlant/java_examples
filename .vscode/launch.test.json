@@ -1,0 +1,156 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "simple-cipher",
+                "projectName": "simple-cipher",
+                "workingDirectory": "/home/seongwon/repo/java_examples/simple-cipher",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "spring-mvc",
+                "projectName": "spring-mvc",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring-mvc",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "junit",
+                "projectName": "junit",
+                "workingDirectory": "/home/seongwon/repo/java_examples/junit",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-mysql-data",
+                "projectName": "gs-mysql-data",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring_mysql",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-spring-boot",
+                "projectName": "gs-spring-boot",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring_boot_application",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-maven",
+                "projectName": "gs-maven",
+                "workingDirectory": "/home/seongwon/repo/java_examples/simple_maven",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-securing-web",
+                "projectName": "gs-securing-web",
+                "workingDirectory": "/home/seongwon/repo/java_examples/securing_web",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "java-jni",
+                "projectName": "java-jni",
+                "workingDirectory": "/home/seongwon/repo/java_examples/java-jni",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "simple-cipher",
+                "projectName": "simple-cipher",
+                "workingDirectory": "/home/seongwon/repo/java_examples/simple-cipher",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "spring-mvc",
+                "projectName": "spring-mvc",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring-mvc",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "junit",
+                "projectName": "junit",
+                "workingDirectory": "/home/seongwon/repo/java_examples/junit",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-mysql-data",
+                "projectName": "gs-mysql-data",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring_mysql",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-spring-boot",
+                "projectName": "gs-spring-boot",
+                "workingDirectory": "/home/seongwon/repo/java_examples/spring_boot_application",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-maven",
+                "projectName": "gs-maven",
+                "workingDirectory": "/home/seongwon/repo/java_examples/simple_maven",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "gs-securing-web",
+                "projectName": "gs-securing-web",
+                "workingDirectory": "/home/seongwon/repo/java_examples/securing_web",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "java-jni",
+                "projectName": "java-jni",
+                "workingDirectory": "/home/seongwon/repo/java_examples/java-jni",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
