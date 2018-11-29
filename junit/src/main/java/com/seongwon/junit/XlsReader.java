@@ -21,7 +21,7 @@ public class XlsReader {
         return this;
     }
     public XlsReader workBook(){
-
+        return this;
     }
     public String read() {
         return "it reads";
