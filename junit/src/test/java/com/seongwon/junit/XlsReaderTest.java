@@ -12,7 +12,10 @@ public class XlsReaderTest{
     public void setFileTest() throws Throwable{
         URL url = this.getClass().getClassLoader().getResource("data.xlsx");
 
-        XlsReader reader = new XlsReader(new File(url.toURI()));
+        XlsReader reader = 
+        new XlsReader()
+            .file(new File(url.toURI()))
+            .workBook();
         assertTrue(reader.getFile() != null);
     }
 }

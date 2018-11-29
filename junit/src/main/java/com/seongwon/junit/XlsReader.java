@@ -10,7 +10,7 @@ public class XlsReader {
     FileInputStream fis;
     XSSFWorkbook workbook;
     public XlsReader(){
-        
+
     }
     public XlsReader(File file) throws Throwable{
         if (!file.isFile())
@@ -21,9 +21,7 @@ public class XlsReader {
     public XlsReader file(File file) throws Throwable{
         this.file = file;
         this.fis = new FileInputStream(this.file);
-        return this;
-    }
-    public XlsReader workBook(){
+        this.workbook = new XSSFWorkbook(this.fis);
         return this;
     }
     public String read() {
