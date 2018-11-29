@@ -14,8 +14,7 @@ public class XlsReaderTest{
 
         XlsReader reader = 
         new XlsReader()
-            .file(new File(url.toURI()))
-            .workBook();
+            .file(new File(url.toURI()));
         assertTrue(reader.getFile() != null);
     }
 }
