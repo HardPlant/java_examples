@@ -17,12 +17,6 @@ public class XlsReaderTest{
         new XlsReader()
             .file(new File(url.toURI()));
         assertTrue(reader.getFile() != null);
-        //(1,1) : 1
-        //(1,2) : 2
-        //(1,3) : 3
-        //(1,4) : 4
-        //(1,5) : 5
-        String result = reader.read(1,1);
-        assertEquals(result,"1");
+        reader.readSheet(0);
     }
 }

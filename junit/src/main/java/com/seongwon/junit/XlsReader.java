@@ -24,7 +24,7 @@ public class XlsReader {
         this.workbook = new XSSFWorkbook(this.fis);
         return this;
     }
-    public String read() {
+    public String readSheet() {
         return "it reads";
     }
     /**
