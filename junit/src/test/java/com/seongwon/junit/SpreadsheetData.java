@@ -76,7 +76,7 @@ public class SpreadsheetData{
         if(cell.getCellType() == CellType.STRING){
             cellValue = cell.getRichStringCellValue().getString();
         } else if (cell.getCellType() == CellType.NUMERIC){
-            cellValue = cell.getBooleanCellValue();
+            cellValue = cell.getNumericCellValue();
         } else if (cell.getCellType() == CellType.FORMULA){
             cellValue = evaluateCellFormula(workbook, cell);
         }

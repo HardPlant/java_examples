@@ -22,7 +22,7 @@ public class DataDrivenTestsWithSpreadsheetTest{
 
     @Parameters
     public static Collection spreadsheetData() throws IOException{
-        InputStream spreadsheet = new FileInputStream("src/test/resources/aTimesB.xlsx");
+        InputStream spreadsheet = new FileInputStream("src/test/resources/aTimesB.xls");
         return new SpreadsheetData(spreadsheet).getData();
     }
     public DataDrivenTestsWithSpreadsheetTest(double a, double b, double aTimesB){
