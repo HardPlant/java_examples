@@ -1,4 +1,4 @@
-paTimesBckage com.seongwon.junit;
+package com.seongwon.junit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +22,7 @@ public class DataDrivenTestsWithSpreadsheetTest{
 
     @Parameters
     public static Collection spreadsheetData() throws IOException{
-        InputStream spreadsheet = new FileInputStream("src/test/resources/aTimesB.xls");
+        InputStream spreadsheet = new FileInputStream("src/test/resources/aTimesB.xlsx");
         return new SpreadsheetData(spreadsheet).getData();
     }
     public DataDrivenTestsWithSpreadsheetTest(double a, double b, double aTimesB){
