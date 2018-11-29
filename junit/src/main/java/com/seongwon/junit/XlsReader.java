@@ -27,7 +27,7 @@ public class XlsReader {
         return this;
     }
     public XlsReader readSheet(int sheetNum) {
-        this.workbook.getSheetAt(sheetNum);
+        this.sheet = this.workbook.getSheetAt(sheetNum);
         return this;
     }
     /**

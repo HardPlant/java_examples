@@ -29,3 +29,14 @@ Calc 변경
 
 ### Apache POI
 
+### Data-driven 테스트
+
+Parametrized Test로 가능
+
+```java
+@RunWith(Parameterized.class)
+public class PermiumTweetsServiceTest{
+
+}
+```
+
