@@ -17,9 +17,6 @@ public class XlsReader {
         this.fis = new FileInputStream(this.file);
     }
 
-    public XlsReader(String file) {
-        this.file = new File(file);
-    }
     public XlsReader file(File file){
         this.file = file;
         return this;
