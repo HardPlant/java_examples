@@ -20,3 +20,4 @@ java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore Calcu
 
 ### 테스트 실패하게 만들기
 
+Calc 변경
