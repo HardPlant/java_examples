@@ -19,6 +19,7 @@ public class XlsReaderTest{
             .file(new File(url.toURI()));
         assertTrue(reader.getFile() != null);
         reader.readSheet(0);
-        assertNotNull(reader.getFile());
+        assertNotNull(reader.getSheet());
+
     }
 }
