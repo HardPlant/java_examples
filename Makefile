@@ -1,5 +1,5 @@
-groupId=com.seongwon.springmvc
-artifactId=spring-mvc
+groupId=com.seongwon.junit
+artifactId=junit
 archetypeArtifactId="maven-archetype-quickstart"
 interactiveMode="false"
 module=App

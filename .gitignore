@@ -2,3 +2,4 @@
 securing_web/target/*
 simple_maven/target/*
 mariadb_setting/config.sh
+bin
