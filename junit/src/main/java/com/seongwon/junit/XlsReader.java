@@ -9,16 +9,18 @@ public class XlsReader {
     File file;
     FileInputStream fis;
     XSSFWorkbook workbook;
-
+    public XlsReader(){
+        
+    }
     public XlsReader(File file) throws Throwable{
         if (!file.isFile())
             return;
-        this.file = file;
-        this.fis = new FileInputStream(this.file);
+        this.file(file);
     }
 
-    public XlsReader file(File file){
+    public XlsReader file(File file) throws Throwable{
         this.file = file;
+        this.fis = new FileInputStream(this.file);
         return this;
     }
     public XlsReader workBook(){
