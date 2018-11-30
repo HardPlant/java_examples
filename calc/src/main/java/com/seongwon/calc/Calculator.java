@@ -12,7 +12,7 @@ public class Calculator{
         int end = 0;
         for(int i=0; i<expr.length();i++){
             int current = expr.charAt(i);
-            if('0'<current && current <'9'){
+            if('0'<=current && current <='9'){
                 continue;
             } else{
                 end = i;
