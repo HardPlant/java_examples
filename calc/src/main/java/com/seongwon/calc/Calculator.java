@@ -6,42 +6,7 @@ public class Calculator{
     String expr;
     public Calculator(){
     }
-/*
-    void simpleParse(){
-        int first_index;
-        int operand_index;
-        int second_index;
-        for(int i=0;i<expr.length();i++){
-            char current = expr.charAt(i);
-            if('0'< current && current <'9'){
-                continue;
-            }
-            first_index = i;
-            break;
-        }
-
-        for(int i=0;i<expr.length();i++){
-            char current = expr.charAt(i);
-            if(!('0'< current && current <'9')){
-                continue;
-            }
-            operand_index = i;
-        }
-
-        for(int i=0;i<expr.length();i++){
-            char current = expr.charAt(i);
-            if('0'< current && current <'9'){
-                continue;
-            }
-            second_index = i;
-            break;
-        }
-        String first = expr.substring(0, first_index);
-        String operand = expr.substring(first_index,operand_index);
-        String second = expr.substring(operand_index, second_index);
-        evaluate(operand, first, second);
-    }
-*/
+    
     public double evaluate(String operand, String first, String second){
         Integer operand1 = Integer.valueOf(first);
         Integer operand2 = Integer.valueOf(second);
