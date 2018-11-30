@@ -19,4 +19,11 @@ public class CalculatorTest{
         calc.setExpr("1+2");
         assertEquals((int)calc.findNumberInExpr(),1);
     }
+    @Test
+    public void testGetNumbers(){
+        calc.setExpr("11+2");
+        assertEquals((int)calc.findNumberInExpr(),11);
+        calc.setExpr("20+2");
+        assertEquals((int)calc.findNumberInExpr(),20);
+    }
 }
