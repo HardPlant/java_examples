@@ -8,9 +8,15 @@ import com.seongwon.calc.Calculator;
 
 
 public class CalculatorTest{
+    Calculator calc = new Calculator();
+
     @Test
     public void testEvaluatePlus(){
-        Calculator calc = new Calculator();
         assertEquals((int)calc.evaluate("+","1","2"), 3);
+    }
+    @Test
+    public void testGetANumber(){
+        calc.setExpr("1+2");
+        assertEquals((int)calc.findNumberInExpr(),1);
     }
 }

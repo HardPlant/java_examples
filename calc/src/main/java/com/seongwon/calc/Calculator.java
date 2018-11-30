@@ -6,7 +6,22 @@ public class Calculator{
     String expr;
     public Calculator(){
     }
-    
+
+    public int findNumberInExpr(){
+        int start = 0;
+        int end = 0;
+        for(int i=0; i<expr.length();i++){
+            current = expr.charAt(i);
+            if('0'<current && current <'9'){
+                continue;
+            } else{
+                current = current -1;
+                break;
+            }
+        }
+        return Integer.valueOf(expr.substring(start,end));
+    }
+
     public double evaluate(String operand, String first, String second){
         Integer operand1 = Integer.valueOf(first);
         Integer operand2 = Integer.valueOf(second);
