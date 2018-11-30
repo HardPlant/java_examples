@@ -11,11 +11,11 @@ public class Calculator{
         int start = 0;
         int end = 0;
         for(int i=0; i<expr.length();i++){
-            current = expr.charAt(i);
+            int current = expr.charAt(i);
             if('0'<current && current <'9'){
                 continue;
             } else{
-                current = current -1;
+                end = i;
                 break;
             }
         }
