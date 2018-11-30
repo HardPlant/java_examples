@@ -1,5 +1,5 @@
-groupId=com.seongwon.junit
-artifactId=junit
+groupId=com.seongwon.calc
+artifactId=calc
 archetypeArtifactId="maven-archetype-quickstart"
 interactiveMode="false"
 module=App
