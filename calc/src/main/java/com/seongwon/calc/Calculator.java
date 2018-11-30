@@ -5,9 +5,8 @@ import java.util.Queue;
 public class Calculator{
     String expr;
     public Calculator(){
-        queue = new String[100];
     }
-
+/*
     void simpleParse(){
         int first_index;
         int operand_index;
@@ -26,7 +25,7 @@ public class Calculator{
             if(!('0'< current && current <'9')){
                 continue;
             }
-            operand = i;
+            operand_index = i;
         }
 
         for(int i=0;i<expr.length();i++){
@@ -42,14 +41,15 @@ public class Calculator{
         String second = expr.substring(operand_index, second_index);
         evaluate(operand, first, second);
     }
+*/
     public double evaluate(String operand, String first, String second){
-        double operand1 = Double(first);
-        double operand2 = Double(second);
+        Integer operand1 = Integer.valueOf(first);
+        Integer operand2 = Integer.valueOf(second);
         Operand operator;
         if(operand.equals('+')){
             operator = new Plus(operand1, operand2);
         }
-        
+
         assert(operator != null);
         return operator.run();
     }
