@@ -21,18 +21,6 @@ public class Calculator{
         }
         return Integer.valueOf(expr.substring(start,end));
     }
-
-    public double evaluate(String operand, String first, String second){
-        Integer operand1 = Integer.valueOf(first);
-        Integer operand2 = Integer.valueOf(second);
-        Operand operator = null;
-        if(operand.equals("+")){
-            operator = new Plus(operand1, operand2);
-        }
-
-        assert(operator != null);
-        return operator.run();
-    }
     
 
     /**
