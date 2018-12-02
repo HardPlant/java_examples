@@ -21,8 +21,13 @@ public class MergeSort implements Sort{
         conquer(low, high);
     }
     private void conquer(int low, int high){
-        for(int i=low; low<high; i++)
-            if(array[low] > array[high]) array[low] = array[high];
+        for(int i=low; low<high; i++){
+            if(array[low] > array[high]){
+                int temp = array[low];
+                array[low] = array[high];
+                array[high] = temp;
+            }
+        }
     }
     /**
      * @param array the array to set
