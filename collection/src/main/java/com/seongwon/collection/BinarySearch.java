@@ -14,12 +14,14 @@ public class BinarySearch implements Search{
         return search_recursive(array, x, array.length/2);
     }
     public int search_recursive(int[] array, int x, int index) {
-        if(index < 0 || index > array.length) return -1;
-        if(array[index] == x) return index;
-        else if (array[index]< x) return search_recursive(array, x, (index+array.length)/2);
+        if(index < 0 || index > array.length-1) return -1;
+        
+        if (array[index]< x) return search_recursive(array, x, (index+array.length)/2);
         else if (array[index]> x) return search_recursive(array, x, index/2);
+        
+        return index;
     }
     public boolean contains_x(int index){
-
+        return true;
     }
 }
