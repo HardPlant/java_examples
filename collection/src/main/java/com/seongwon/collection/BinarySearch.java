@@ -25,9 +25,6 @@ public class BinarySearch implements Search{
         
         return index;
     }
-    public boolean contains_x(int index){
-        return true;
-    }
     /**
      * @param x the x to set
      */
