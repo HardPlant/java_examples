@@ -64,6 +64,15 @@ public class MergeSort implements Sort{
             }
             k++;
         }
+        if(j<=higher_half){
+            for(;i < low_half+higher_half;i++){
+                merging_array[k] = low_array[i];
+            }
+        } else{
+            for(;j < low_half+higher_half;j++){
+                merging_array[k] = high_array[j];
+            }
+        }
     }
     /**
      * @param array the array to set
