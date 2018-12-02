@@ -13,6 +13,10 @@ public class BinarySearch implements Search{
     public int search() {
         return search_recursive(array, x, array.length/2);
     }
+    public int search(int x){
+        setX(x);
+        return search();
+    }
     public int search_recursive(int[] array, int x, int index) {
         if(index < 0 || index > array.length-1) return -1;
         
@@ -23,5 +27,11 @@ public class BinarySearch implements Search{
     }
     public boolean contains_x(int index){
         return true;
+    }
+    /**
+     * @param x the x to set
+     */
+    public void setX(int x) {
+        this.x = x;
     }
 }
