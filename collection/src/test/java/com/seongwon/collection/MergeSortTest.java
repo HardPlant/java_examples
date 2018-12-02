@@ -13,6 +13,10 @@ public class MergeSortTest{
         return true;
     }
     @Test
-    public void iterativeTest(){
+    public void recursiveTest(){
+        int[] arr = {-1,4,3,2,1};
+        MergeSort msort = new MergeSort(arr);
+        msort.sort();
+        assertTrue(is_sorted(arr));
     }
 }

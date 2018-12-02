@@ -9,7 +9,7 @@ public class MergeSort implements Sort{
     }
     @Override
     public int[] sort() {
-        
+        divide(0, array.length-1);
         return this.array;
     }
     private void divide(int low, int high){
