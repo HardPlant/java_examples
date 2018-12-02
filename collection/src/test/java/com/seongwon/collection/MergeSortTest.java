@@ -7,9 +7,15 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 public class MergeSortTest{
     private boolean is_sorted(int[] array){
+        System.out.println("Checking...");
         for(int idx = 0; idx < array.length-1; idx++){
-            if(array[idx]>array[idx+1]) return false;
+            System.out.print(array[idx] + " ");
+            if(array[idx]>array[idx+1]){
+                System.out.println(array[idx]+1 + "Not matches");
+                return false;
+            }
         }
+        System.out.println();
         return true;
     }
     
