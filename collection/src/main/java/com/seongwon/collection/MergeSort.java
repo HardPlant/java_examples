@@ -29,6 +29,16 @@ public class MergeSort implements Sort{
             }
         }
     }
+    
+    private void mergeSort_first(int[] array){
+        int n = array.length;
+        if(n > 1){
+            final int high = n/2;
+            final int mid = n - high;
+            int[] low_array;
+            int[] high_array;
+        }
+    }
     /**
      * @param array the array to set
      */
