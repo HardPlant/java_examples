@@ -4,11 +4,12 @@ import com.seongwon.collection.Sort;
 
 public class MergeSort implements Sort{
     int[] array;
-    public MergeSort(int[] array){
-        this.array = array;
+    public MergeSort(){
+    
     }
     @Override
-    public int[] sort() {
+    public int[] sort(int[] array) {
+        setArray(array);
         divide(0, array.length-1);
         return this.array;
     }
@@ -22,5 +23,11 @@ public class MergeSort implements Sort{
     private void conquer(int low, int high){
         for(int i=low; low<high; i++)
             if(array[low] > array[high]) array[low] = array[high];
+    }
+    /**
+     * @param array the array to set
+     */
+    public void setArray(int[] array) {
+        this.array = array;
     }
 }

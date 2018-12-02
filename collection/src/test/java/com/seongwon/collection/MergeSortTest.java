@@ -15,8 +15,8 @@ public class MergeSortTest{
     @Test
     public void recursiveTest(){
         int[] arr = {-1,4,3,2,1};
-        MergeSort msort = new MergeSort(arr);
-        msort.sort();
+        MergeSort msort = new MergeSort();
+        msort.sort(arr);
         assertTrue(is_sorted(arr));
     }
 }
