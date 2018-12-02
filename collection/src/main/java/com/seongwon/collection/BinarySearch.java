@@ -4,11 +4,15 @@ import com.seongwon.collection.Search;
 
 public class BinarySearch implements Search{
     int[] array;
+    int x;
     
     public BinarySearch(int[] array){
         this.array = array;
     }
     @Override
+    public int search() {
+        return search_recursive(array, x, array.length/2);
+    }
     public int search_recursive(int[] array, int x, int index) {
         if(index < 0 || index > array.length) return -1;
         if(array[index] == x) return index;
