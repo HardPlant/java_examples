@@ -9,6 +9,7 @@ public class MergeSort implements Sort{
     }
     @Override
     public int[] sort(int[] array) {
+        setArray(array);
         mergeSort_first(this.array);
         return this.array;
     }
