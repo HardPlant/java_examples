@@ -28,6 +28,11 @@ public class BinarySearch implements Search{
                 return search_recursive(mid+1, high);
         }        
     }
+    public int search_iterative(){
+        assert(array != null);
+        int low = 0;
+        int high = array.length;
+    }
     /**
      * @param x the x to set
      */
