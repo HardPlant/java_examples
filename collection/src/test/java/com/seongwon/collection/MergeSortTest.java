@@ -12,9 +12,7 @@ public class MergeSortTest{
         }
         return true;
     }
-
-    @Test
-
+    
     @Test
     public void recursiveTest(){
         int[] arr = {-1,4,3,2,1};
