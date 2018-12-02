@@ -31,3 +31,24 @@ Java에서 데이터를 저장하는 기본적인 자료구조들을 한 곳에 
 * HashMap: 동기화가 보장되는 맵 클래스
 * (SortedMap) -> TreeMap: 동기화가 보장되지 않는 맵 클래스
 * HashTable: 정렬을 위한 맵 클래스
+
+### Collection : interface
+
+add(), contain(), isEmpty(), remove(), size(), iterator()
+
+##### List
+
+###### ArrayList
+
+읽기 빠름, 동적 크기 결정 가능
+단방향 포인터 구조임
+
+###### Vector
+
+ArrayList 구형버전임, 잘 쓰진 않음
+
+###### LinkedList
+
+양방향 포인터 구조임
+삽입/삭제 빈번할 때 빠른 성능 보장
+스택, 큐, 양방향 큐 만들기 가능
