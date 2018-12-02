@@ -23,21 +23,21 @@ public class MergeSort implements Sort{
         int n = array.length - 1;
         if(n > 1){
             final int low_half = n/2;
-            final int higher_half = n - low_half;
+            final int high_half = n - low_half;
             int[] low_array = make_array(array, 0, low_half);
             int[] high_array = make_array(array, low_half+1, high_half);
             mergeSort_first(low_array);
             mergeSort_first(high_array);
-            merge(low_half, higher_half, low_array, high_array, array);
+            merge(low_half, high_half, low_array, high_array, array);
         }
     }
-    private void merge(int low_half, int higher_half
+    private void merge(int low_half, int high_half
     , int[] low_array, int[] high_array, int[] merging_array){
         int i, j, k;
         i=0;
         j=0;
         k=0;
-        while(i<=low_half && j<=higher_half){
+        while(i<=low_half && j<=high_half){
             if(low_array[i] < high_array[j]){
                 merging_array[k] = low_array[i];
                 i++;
@@ -47,12 +47,12 @@ public class MergeSort implements Sort{
             }
             k++;
         }
-        if(j<=higher_half){
-            for(;i < low_half+higher_half;i++){
+        if(j<=high_half){
+            for(;i < low_half+high_half;i++){
                 merging_array[k] = low_array[i];
             }
         } else{
-            for(;j < low_half+higher_half;j++){
+            for(;j < low_half+high_half;j++){
                 merging_array[k] = high_array[j];
             }
         }
