@@ -52,7 +52,7 @@ public class MergeSort implements Sort{
             }
             k++;
         }
-        if(j<high_half){
+        if(j<=high_half){
             for(;i < low_half;i++){
                 merging_array[k] = low_array[i];
                 System.out.println("Merging "+ merging_array[k]);
