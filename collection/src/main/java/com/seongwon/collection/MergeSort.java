@@ -45,7 +45,24 @@ public class MergeSort implements Sort{
             int[] high_array = make_array(array, low_half+1, high_half);
             mergeSort_first(low_array);
             mergeSort_first(high_array);
-            merge(low_half, higher_half, low_array, high_array);
+            merge(low_half, higher_half, low_array, high_array, array);
+        }
+    }
+    private void merge(int low_half, int higher_half
+    , int[] low_array, int[] high_array, int[] merging_array){
+        int i, j, k;
+        i=0;
+        j=0;
+        k=0;
+        while(i<=low_half && j<=higher_half){
+            if(low_array[i] < high_array[j]){
+                merging_array[k] = low_array[i];
+                i++;
+            } else {
+                merging_array[k] = high_array[j];
+                j++;
+            }
+            k++;
         }
     }
     /**
