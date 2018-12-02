@@ -28,10 +28,20 @@ public class BinarySearch implements Search{
                 return search_recursive(mid+1, high);
         }        
     }
-    public int search_iterative(){
+    public int search_iterative(int x){
+        setX(x);
         assert(array != null);
         int low = 0;
-        int high = array.length;
+        int high = array.length -1;
+        int mid = -1;
+        for(;low<=high;){
+            mid = (low + high) / 2;
+            if(array[mid] == x) break;
+            if(array[mid] > x) high = mid - 1;
+            else low = mid+1;
+        }
+        return mid;
+        
     }
     /**
      * @param x the x to set

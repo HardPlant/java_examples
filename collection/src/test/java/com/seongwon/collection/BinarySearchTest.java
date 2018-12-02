@@ -27,4 +27,20 @@ public class BinarySearchTest{
         assertEquals(search.search(42), 9);
         assertEquals(search.search(Integer.MAX_VALUE), 10);
     }
+    @Test
+    public void iterativeTest(){
+        int[] array = {Integer.MIN_VALUE, -1,0,1,4,7,9,13,26,42,   Integer.MAX_VALUE};
+        BinarySearch search = new BinarySearch(array);
+        assertEquals(search.search_iterative(Integer.MIN_VALUE), 0);
+        assertEquals(search.search_iterative(-1), 1);
+        assertEquals(search.search_iterative(0), 2);
+        assertEquals(search.search_iterative(1), 3);
+        assertEquals(search.search_iterative(4), 4);
+        assertEquals(search.search_iterative(7), 5);
+        assertEquals(search.search_iterative(9), 6);
+        assertEquals(search.search_iterative(13), 7);
+        assertEquals(search.search_iterative(26), 8);
+        assertEquals(search.search_iterative(42), 9);
+        assertEquals(search.search_iterative(Integer.MAX_VALUE), 10);
+    }
 }
