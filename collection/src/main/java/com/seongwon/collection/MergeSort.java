@@ -15,7 +15,7 @@ public class MergeSort implements Sort{
     }
     public int[] make_array(int[] array, int low, int high){
         int[] result = new int[high-low + 1];
-        for(int i=0; i<=high-low+1; i++){
+        for(int i=0; i<high-low+1; i++){
             result[i] = array[low+i];
         }
         return result;
