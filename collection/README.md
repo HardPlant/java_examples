@@ -36,7 +36,7 @@ Java에서 데이터를 저장하는 기본적인 자료구조들을 한 곳에 
 
 add(), contain(), isEmpty(), remove(), size(), iterator()
 
-##### List
+### List
 
 ###### ArrayList
 
@@ -68,4 +68,5 @@ ArrayList 구형버전임, 잘 쓰진 않음
 
 정렬된 순서대로 보관, 정렬 방법 지정 가능
 
-##### Map
+### Map
+
