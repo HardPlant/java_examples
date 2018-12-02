@@ -18,16 +18,15 @@ public class BinarySearch implements Search{
         return search();
     }
     public int search_recursive(int low, int high) {
-
+        int mid;
         if(low>high) return -1;
         else {
-            int mid = (low+high)/2;
+            mid = (low+high)/2;
             if(array[mid] == x) return mid;
-            else if(x<array[mid]) return contains_x(low, mid-1);
+            else if(x<array[mid]) return search_recursive(low, mid-1);
             else
-                return contains_x(mid+1, high);
+                return search_recursive(mid+1, high);
         }        
-        return index;
     }
     /**
      * @param x the x to set
