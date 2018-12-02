@@ -24,7 +24,22 @@ x와 가운데 아이템이 같으면,
 
 * 부분배열로 얻은 해답으로 전체 배열에 대한 해답을 **구함**
 
+##### 이분검색 코드
 
+```java
+int search(int[] array, int x){
+    int low = 0;
+    int high = array.length - 1;
+    int mid = -1;
+    for(; low <= high){
+        mid = (low + high)/2
+        if(array[mid] == x) break;
+        else if(array[mid]<x) low = mid + 1;
+        else high = mid - 1;
+    }
+    return mid;
+}
+```
 ### 합병정렬
 
 ### 퀵소트
