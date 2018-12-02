@@ -13,18 +13,18 @@ import org.junit.Test;
 public class BinarySearchTest{
     @Test
     public void recursiveTest(){
-        int[] array = {1,9,4,7,13,26,42, -1, 0, Integer.MAX_VALUE, Integer.MIN_VALUE};
+        int[] array = {Integer.MIN_VALUE, -1,0,1,9,4,7,13,26,42,   Integer.MAX_VALUE};
         BinarySearch search = new BinarySearch(array);
-        assertEquals(search.search(1), 0);
-        assertEquals(search.search(9), 1);
-        assertEquals(search.search(4), 2);
-        assertEquals(search.search(7), 3);
-        assertEquals(search.search(13), 4);
-        assertEquals(search.search(26), 5);
-        assertEquals(search.search(42), 6);
-        assertEquals(search.search(-1), 7);
-        assertEquals(search.search(0), 8);
-        assertEquals(search.search(Integer.MAX_VALUE), 9);
-        assertEquals(search.search(Integer.MIN_VALUE), 10);
+        assertEquals(search.search(Integer.MIN_VALUE), 0);
+        assertEquals(search.search(-1), 1);
+        assertEquals(search.search(0), 2);
+        assertEquals(search.search(1), 3);
+        assertEquals(search.search(9), 4);
+        assertEquals(search.search(4), 5);
+        assertEquals(search.search(7), 6);
+        assertEquals(search.search(13), 7);
+        assertEquals(search.search(26), 8);
+        assertEquals(search.search(42), 9);
+        assertEquals(search.search(Integer.MAX_VALUE), 10);
     }
 }
