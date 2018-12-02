@@ -12,22 +12,22 @@ Java에서 데이터를 저장하는 기본적인 자료구조들을 한 곳에 
 
 데이터 중복을 허용함
 
-* ArrayList
+* ArrayList : 동기화 보장하지 않음
 * LinkedList
-* Vector
+* Vector : 동기화 보장
 * Stack
 
 ###### Set : 집합적인 저장 공간
 
 데이터의 중복을 허용하지 않음
 
-* HashSet
-* TreeSet
+* HashSet : Set 계열 대표클래스
+* (SortedSet) -> TreeSet
 
 #### Map : 키/값으로 데이터 처리
 
 키/값 쌍으로 이루어짐, 순서는 유지되지 않음, 키의 중복을 허용하지 않음
 
 * HashMap: 동기화가 보장되는 맵 클래스
-* TreeMap: 동기화가 보장되지 않는 맵 클래스
+* (SortedMap) -> TreeMap: 동기화가 보장되지 않는 맵 클래스
 * HashTable: 정렬을 위한 맵 클래스
